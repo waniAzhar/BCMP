@@ -1,0 +1,16 @@
+.dropzone{
+    height: 150px;
+    min-width: 100px;
+    display: table;
+    background-color: #eee;
+    width: 400px;
+    border: dashed 1px #aaa;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.browse-btn{
+    color: blue;
+    cursor: pointer;
+    font-weight: bold;
+}

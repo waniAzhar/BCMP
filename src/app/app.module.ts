@@ -21,6 +21,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { AddNewProductComponent } from './add-new-product/add-new-product.component';
+import { DragDropDirective } from './drag-drop.directive';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AddNewProductComponent } from './add-new-product/add-new-product.compon
     LoginComponent,
     HeaderComponent,
     ForbiddenComponent,
-    AddNewProductComponent
+    AddNewProductComponent,
+    DragDropDirective
   ],
   imports: [
     BrowserModule,
