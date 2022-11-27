@@ -16,10 +16,14 @@
 
 </mat-toolbar>
 
-
+<mat-toolbar color="primary" *ngIf="!isLoggedIn()">
+  <button mat-raised-button color="primary" routerLink="/" >Home</button>
+  <button mat-raised-button color="primary" routerLink="/apps" >Apps</button>
+  </mat-toolbar>
 
 <mat-toolbar color="primary" *ngIf="isLoggedIn()">
 <button mat-raised-button color="primary" routerLink="/" >Home</button>
+<button *ngIf="!isAdmin()" mat-raised-button color="primary" routerLink="/apps" >Apps</button>
 <button *ngIf="isAdmin()" mat-raised-button color="primary" routerLink="/addNewProduct" >Add Product</button>
 <button *ngIf="isAdmin()" mat-raised-button color="primary" routerLink="/showProductDetails" >All Products</button>
 
