@@ -1,0 +1,57 @@
+<div class="container mt-5">
+    <div class="card p-3">
+        <div class="row">
+            <div class="col-6">
+                <form #orderForm="ngForm" (ngSubmit)="placeOrder(orderForm)">
+                    <mat-form-field appearance="outline" class="w-100" >
+                        <mat-label>Email Id</mat-label>
+                        <input matInput placeholder="Email Id"
+                        [(ngModel)]="orderDetails.emailId"
+                        name="emailId">
+                      </mat-form-field>
+
+                      <mat-form-field appearance="outline" class="w-100" >
+                        <mat-label>Order Amount</mat-label>
+                        <input matInput placeholder="Order Amount"
+                        [(ngModel)]="orderDetails.orderAmount"
+                        name="orderAmount">
+                      </mat-form-field>
+
+                      <div align="right">
+                        <button type="submit" mat-stroked-button color="primary"> Make Payment</button>
+                      </div>
+                </form>
+            </div>
+            <div class="col-6 p-3">
+               
+                    <table class="table">
+                        <thead class="thead">
+                            <tr>
+                                <th>Code</th>
+                                <th>Price</th>
+                                <th>Tax</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            <tr *ngFor="let product of productDetails">
+                                <td>{{product.productName}}</td>
+                                <td>{{product.productDiscountedPrice}} $</td>
+                                <td>10%</td>
+                                <td>{{getCalculatedTotal(product.productId,product.productDiscountedPrice)}} $</td>
+                            </tr>
+                            <tr *ngFor="let product of productDetails">
+                                <td></td>
+                                <td></td>
+                                <td><b>Grand Total :</b> </td>
+                                <td><b>{{getCalculatedTotal(product.productId,product.productDiscountedPrice)}} $</b></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+
+            </div>
+        </div>
+    </div>
+
+</div>

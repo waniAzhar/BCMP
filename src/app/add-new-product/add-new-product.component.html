@@ -15,10 +15,17 @@
               </mat-form-field>
 
               <mat-form-field appearance="outline" class="w-100" >
-                <mat-label>Product Description</mat-label>
-                <input matInput placeholder="Product Description"
+                <mat-label>Product Developer</mat-label>
+                <input matInput placeholder="Product Developer"
                 [(ngModel)]="product.productDescription"
                 name="productDescription">
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class="w-100" >
+                <mat-label>Product Description</mat-label>
+                <input matInput placeholder="Product Description"
+                [(ngModel)]="product.longDescription"
+                name="longDescription">
               </mat-form-field>
 
               <mat-form-field appearance="outline" class="w-100" >

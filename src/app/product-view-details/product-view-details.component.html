@@ -2,11 +2,20 @@
 
     {{product.productName}}
 
+    <div class="div" [innerHTML]="product.longDescription"></div>
+    
+
     <mat-grid-list cols="4" rowHeight="1:1">
         <mat-grid-tile *ngFor="let file of product.productImages">
             <img [src]="file.url" alt="">
         </mat-grid-tile>
     </mat-grid-list>
 
+    
 
+
+</div>
+
+<div class="container mt-5">
+    <button mat-raised-button color="primary" (click)="buyProduct(product.productId)">Purchase</button>
 </div>

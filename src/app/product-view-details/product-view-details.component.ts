@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../_model/product.model';
 
 @Component({
@@ -10,11 +10,18 @@ import { Product } from '../_model/product.model';
 export class ProductViewDetailsComponent implements OnInit {
 
   product: Product;
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private activatedRoute: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.product = this.activatedRoute.snapshot.data['product'];
-    console.log(this.product);
+    //console.log(this.product);
+  }
+
+  buyProduct(productId){
+    this.router.navigate(['/buyProduct', {
+      isSingleProductCheckout: true, id: productId
+    }]);
   }
 
 }
